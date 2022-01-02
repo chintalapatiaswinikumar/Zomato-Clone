@@ -1,0 +1,155 @@
+.home-img {
+  position: absolute;
+  width: 1110px;
+  height: 320px;
+  left: 165px;
+  top: 146px;
+
+  background: #cb9165;
+  border-radius: 8px;
+}
+
+.popular-rest {
+  position: absolute;
+  width: 1440px;
+  height: 740px;
+  left: 0px;
+  top: 528px;
+
+  background: #ffffff;
+}
+
+.heading-home1 {
+  position: absolute;
+  height: 48px;
+  width: 313px;
+  left: 165px;
+  top: 64px;
+  border-radius: 0px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 48px;
+  /* identical to box height, or 150% */
+
+  color: #183b56;
+}
+
+.para-home1 {
+  position: absolute;
+  height: 24px;
+  width: 547px;
+  left: 165px;
+  top: 120px;
+  border-radius: 0px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* Light / blue-gray / 500 */
+
+  color: #64748b;
+}
+
+.sort-img {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  left: 1095px;
+  top: 120px;
+  border-radius: 0px;
+}
+
+.sort-box {
+  position: absolute;
+  height: 24px;
+  width: 112px;
+  left: 1131px;
+  top: 120px;
+  border-radius: 0px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* Light / blue-gray / 600 */
+
+  color: #475569;
+}
+.sort-by-select {
+  outline: none;
+  color: #475569;
+  background-color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  padding: 12px;
+  outline: none;
+  cursor: pointer;
+  left: 1131px;
+  top: 0px;
+}
+
+.sort-by-container {
+  display: flex;
+  align-items: center;
+}
+
+.sort-by-select {
+  color: #475569;
+  background-color: #ffffff;
+  font-family: 'Roboto';
+  font-weight: 500;
+  border: none;
+  padding: 12px;
+  outline: none;
+  cursor: pointer;
+}
+
+.sort-by {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: normal;
+  width: 100px;
+  height: 24px;
+}
+
+.select-option {
+  color: #7e858e;
+  font-family: 'Roboto';
+}
+
+.select-option {
+  position: absolute;
+  color: #475569;
+  font-family: 'Roboto';
+}
+
+.horizontal {
+  position: absolute;
+  height: 0px;
+  width: 1110px;
+  left: 165px;
+  top: 168px;
+  border-radius: 0px;
+}
+
+.un-order {
+  position: absolute;
+  width: 160px;
+  height: 100px;
+  left: 165px;
+  top: 216px;
+}
+
+.u-list {
+  list-style-type: none;
+  height: 100px;
+}

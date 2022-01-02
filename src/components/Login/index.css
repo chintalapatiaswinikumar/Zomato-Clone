@@ -1,0 +1,169 @@
+.box1 {
+  position: relative;
+  width: 1440px;
+  height: 1024px;
+  background: #ffffff;
+}
+
+.form1 {
+  width: 735px;
+}
+
+.form {
+  position: absolute;
+  width: 456px;
+  height: 523px;
+  left: 165px;
+  top: 250px;
+  background: #fefeff;
+  box-shadow: 0px 8px 40px rgba(7, 7, 7, 0.08);
+  border-radius: 8px;
+}
+
+.input-label-user {
+  position: absolute;
+  width: 66px;
+  height: 16px;
+  left: 48px;
+  top: 259px;
+
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+
+  /* Light / blue-gray / 600 */
+
+  color: #475569;
+}
+
+.username-input-field {
+  position: absolute;
+  height: 40px;
+  left: 48px;
+  right: 48px;
+  top: 283px;
+  width: 360px;
+
+  border-width: 0px;
+
+  /* Light / blue-gray / 200 */
+
+  background: #e2e8f0;
+  border-radius: 2px;
+}
+
+.input-label-password {
+  position: absolute;
+  width: 68px;
+
+  height: 16px;
+  left: 48px;
+  top: 347px;
+
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+
+  /* Light / blue-gray / 600 */
+
+  color: #475569;
+}
+
+.password-input-field {
+  position: absolute;
+  height: 40px;
+  left: 48px;
+  right: 48px;
+  top: 371px;
+  width: 360px;
+  border-width: 0px;
+
+  /* Light / blue-gray / 200 */
+
+  background: #e2e8f0;
+  border-radius: 2px;
+}
+
+.butt {
+  position: absolute;
+  cursor: pointer;
+  height: 40px;
+  left: 48px;
+  right: 867px;
+  top: 435px;
+  width: 360px;
+  background-color: #f7931e;
+  border-radius: 8px;
+  border-width: 0px;
+  color: #ffffff;
+}
+
+.logo {
+  position: absolute;
+  width: 53px;
+  height: 43px;
+  left: 201px;
+  top: 48px;
+  right: 202px;
+}
+
+.para1 {
+  position: absolute;
+  width: 172px;
+  height: 32px;
+  left: 142px;
+  top: 91px;
+  right: 142px;
+  color: #f7931e;
+  font-family: DM Sans;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.login-heading {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  left: 353px;
+  top: 405px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  top: 155px;
+  left: 188px;
+  right: 188px;
+}
+
+.img-login {
+  position: absolute;
+  width: 705px;
+  height: 1024px;
+  left: 735px;
+  right: 0px;
+}
+
+.para2-login {
+  position: absolute;
+  top: 395px;
+  right: 135px;
+  left: 48px;
+  width: 273px;
+  height: 18px;
+  color: #ef4444;
+}
