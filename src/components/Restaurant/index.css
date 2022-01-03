@@ -1,21 +1,21 @@
 .rest-img {
   position: absolute;
-  height: 100px;
+  height: 120px;
   width: 160px;
   border-radius: 8px;
 }
 
 .rest-container {
   list-style-type: none;
-  width: 1000px;
+  width: 300px;
   height: 100px;
   margin-bottom: 32px;
   display: flex;
   flex-direction: row;
+  margin-right: 85px;
 }
 
 .title {
-  position: absolute;
   font-family: DM Sans;
   font-style: normal;
   font-weight: bold;
@@ -25,10 +25,11 @@
   height: 24px;
   width: 174px;
   border-radius: 0px;
+  margin-left: 170px;
+  margin-bottom: 15px;
 }
 
 .brand {
-  position: absolute;
   top: 40px;
   height: 24px;
   width: 174px;
@@ -37,6 +38,8 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 24px;
+  margin-left: 170px;
+
   /* identical to box height, or 171% */
 
   /* Light / blue-gray / 500 */
@@ -45,7 +48,6 @@
 }
 
 .box11 {
-  position: absolute;
   left: 220px;
 }
 
@@ -53,9 +55,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  position: absolute;
-  top: 60px;
   width: 200px;
+  height: 20px;
+  margin-left: 170px;
 }
 
 .star {

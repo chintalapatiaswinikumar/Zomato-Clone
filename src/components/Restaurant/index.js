@@ -8,8 +8,8 @@ class Restaurant extends Component {
     const {name, menuType, userRating, imageUrl} = restaurant
     /*     const {rating, rating_color, rating_text, total_reviews} = userRating
      */ return (
-      <li className="rest-container">
-        <img src={imageUrl} alt="product" className="rest-img" />
+      <li className="rest-container" testid="restaurant-item">
+        <img src={imageUrl} alt="restaurant" className="rest-img" />
         <div className="box11">
           <h1 className="title">{name}</h1>
           <p className="brand">{menuType}</p>

@@ -143,13 +143,18 @@
 
 .un-order {
   position: absolute;
-  width: 160px;
-  height: 100px;
+  width: 1200px;
+  height: 740px;
   left: 165px;
   top: 216px;
 }
 
 .u-list {
   list-style-type: none;
-  height: 100px;
+  height: 720px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 1200px;
 }

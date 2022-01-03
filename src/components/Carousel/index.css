@@ -1,0 +1,14 @@
+.car-box {
+  position: absolute;
+  width: 1110px;
+  height: 320px;
+  left: 165px;
+  top: 146px;
+
+  background: #cb9165;
+  border-radius: 8px;
+}
+.slick-arrow.slick-prev,
+.slick-arrow.slick-next {
+  background: gray;
+}

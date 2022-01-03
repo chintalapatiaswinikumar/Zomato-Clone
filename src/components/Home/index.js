@@ -1,12 +1,12 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
-import {Redirect} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import Loader from 'react-loader-spinner'
 import Header from '../Header'
 import './index.css'
 import Restaurant from '../Restaurant'
 import Footer from '../Footer'
-import MyCarousel from '../Carousel/index'
+import SimpleSlider from '../Carousel/index'
 
 const sortByOptions = [
   {
@@ -27,6 +27,7 @@ class Home extends Component {
     isLoading: false,
     activeOptionId: sortByOptions[1].value,
     imagesList: [],
+    open: true,
   }
 
   componentDidMount() {
@@ -99,30 +100,106 @@ class Home extends Component {
     }
   }
 
+  onClickLogout = () => {
+    Cookies.remove('jwt_token')
+    const {history} = this.props
+    history.replace('/login')
+  }
+
   onChangeSortby = event => {
     this.setState({activeOptionId: event.target.value}, this.getProducts)
   }
 
   renderLoader = () => (
-    <div className="products-loader-container">
+    <div
+      className="products-loader-container"
+      testid="restaurants-offers-loader"
+    >
       <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
     </div>
   )
 
   renderList = () => {
     const x = sortByOptions
-    const {activeOptionId, productsList, imagesList} = this.state
+    const {activeOptionId, productsList, imagesList, open} = this.state
     return (
       <>
-        <Header />
+        <nav className="nav-header">
+          <div className="nav-content">
+            <Link to="/" className="header-heading">
+              <img
+                className="website-logo"
+                src="https://res.cloudinary.com/dx3zbikpn/image/upload/v1640957000/Frame_274logo_qzx5p5.png"
+                alt="website logo"
+              />
+            </Link>
+            <ul className="nav-menu">
+              <Link to="/" className="nav-link-text">
+                <li>Tasty Kitchens</li>
+              </Link>
+
+              <Link to="/" className="nav-link-home">
+                <li>Home</li>
+              </Link>
+
+              <Link to="/cart" className="nav-link-cart">
+                <li>Cart</li>
+              </Link>
+            </ul>
+            <button
+              type="button"
+              className="logout-desktop-btn"
+              onClick={this.onClickLogout}
+            >
+              Logout
+            </button>
+            <button
+              type="button"
+              className="logout-mobile-btn"
+              onClick={this.onClickLogout}
+            >
+              {/* <img
+                src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-log-out-img.png"
+                alt="logout icon"
+                className="logout-icon"
+              /> */}
+            </button>
+          </div>
+          <div className="nav-menu-mobile">
+            <ul className="nav-menu-list-mobile">
+              <Link to="/">
+                <li className="nav-menu-item-mobile">
+                  <img
+                    src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-icon.png"
+                    alt="nav home"
+                    className="nav-bar-image"
+                  />
+                </li>
+              </Link>
+              <Link to="/products">
+                <li className="nav-menu-item-mobile">
+                  <img
+                    src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-products-icon.png"
+                    alt="nav products"
+                    className="nav-bar-image"
+                  />
+                </li>
+              </Link>
+              <Link to="/cart">
+                <li className="nav-menu-item-mobile">
+                  <img
+                    src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-cart-icon.png"
+                    alt="nav cart"
+                    className="nav-bar-image"
+                  />
+                </li>
+              </Link>
+            </ul>
+          </div>
+        </nav>
         <div className="home-container">
           <div className="home-content">
-            {/*  <img
-              src="https://res.cloudinary.com/dx3zbikpn/image/upload/v1641006033/Frame_7home_img_jb0rxu.png"
-              alt="dresses to be noticed"
-              className="home-img"
-            /> */}
-            <MyCarousel data={imagesList} />
+            <SimpleSlider data={imagesList} />
           </div>
           <div className="popular-rest">
             <h1 className="heading-home1">Popular Restaurant</h1>
@@ -141,7 +218,13 @@ class Home extends Component {
                 className="sort-by-select"
                 value={activeOptionId}
                 onChange={this.onChangeSortby}
+                menuIsOpen={open}
               >
+                <img
+                  src="https://res.cloudinary.com/dx3zbikpn/image/upload/v1641032052/sortsort_uwspna.png"
+                  alt="sort"
+                  className="sort-img"
+                />
                 {x.map(eachOption => (
                   <option
                     key={eachOption.value}
