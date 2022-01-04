@@ -1,12 +1,12 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
-import {Link, Redirect} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import Loader from 'react-loader-spinner'
-import Header from '../Header'
-import './index.css'
-import Restaurant from '../Restaurant'
-import Footer from '../Footer'
-import SimpleSlider from '../Carousel/index'
+/* import Header from '../Header'
+ */ import './index.css'
+import RestaurantList from '../RestaurantList'
+/* import Footer from '../Footer'
+ */ import SimpleSlider from '../Carousel/index'
 
 const sortByOptions = [
   {
@@ -20,24 +20,30 @@ const sortByOptions = [
     value: 'Lowest',
   },
 ]
+const apiStatusConstants = {
+  initial: 'INITIAL',
+  success: 'SUCCESS',
+  failure: 'FAILURE',
+  inProgress: 'IN_PROGRESS',
+}
 
 class Home extends Component {
   state = {
+    /* 
     productsList: [],
-    isLoading: false,
-    activeOptionId: sortByOptions[1].value,
+    activeOptionId: sortByOptions[1].value, */
     imagesList: [],
-    open: true,
+    apiStatus: apiStatusConstants.initial,
   }
 
   componentDidMount() {
-    this.getProducts()
-    this.getImages()
+    /*     this.getProducts()
+     */ this.getImages()
   }
 
-  getProducts = async () => {
+  /*  getProducts = async () => {
     this.setState({
-      isLoading: true,
+      apiStatusProducts: apiStatusConstants.inProgress,
     })
     const jwtToken = Cookies.get('jwt_token')
     const {activeOptionId} = this.state
@@ -69,18 +75,17 @@ class Home extends Component {
         opensAt: restaurant.opens_at,
         userRating: restaurant.user_rating,
       }))
-      /*       console.log('data', updatedData)
-       */
+
       this.setState({
         productsList: updatedData,
-        isLoading: false,
+        apiStatusProducts: apiStatusConstants.success,
       })
     }
   }
-
+ */
   getImages = async () => {
     this.setState({
-      isLoading: true,
+      apiStatus: apiStatusConstants.inProgress,
     })
     const jwtToken = Cookies.get('jwt_token')
     const apiUrl = `https://apis.ccbp.in/restaurants-list/offers`
@@ -91,12 +96,13 @@ class Home extends Component {
       method: 'GET',
     }
     const response = await fetch(apiUrl, options)
-    /*     console.log('fetch', response)
-     */
+
     if (response.ok) {
       const fetchedData = await response.json()
-      /*       console.log('fetch', fetchedData)
-       */ this.setState({isLoading: false, imagesList: fetchedData})
+      this.setState({
+        apiStatus: apiStatusConstants.success,
+        imagesList: fetchedData,
+      })
     }
   }
 
@@ -106,22 +112,31 @@ class Home extends Component {
     history.replace('/login')
   }
 
-  onChangeSortby = event => {
+  /*  onChangeSortby = event => {
     this.setState({activeOptionId: event.target.value}, this.getProducts)
-  }
+  } */
 
-  renderLoader = () => (
+  renderProductsLoader = () => (
     <div
       className="products-loader-container"
       testid="restaurants-offers-loader"
     >
-      <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
+      <Loader type="TailSpin" color="#0b69ff" height="50" width="50" />
+    </div>
+  )
+
+  renderImagesLoader = () => (
+    <div
+      className="products-loader-container"
+      testid="restaurants-offers-loader"
+    >
+      <Loader type="TailSpin" color="#0b69ff" height="50" width="50" />
     </div>
   )
 
   renderList = () => {
     const x = sortByOptions
-    const {activeOptionId, productsList, imagesList, open} = this.state
+    const {imagesList} = this.state
     return (
       <>
         <nav className="nav-header">
@@ -176,15 +191,6 @@ class Home extends Component {
                   />
                 </li>
               </Link>
-              <Link to="/products">
-                <li className="nav-menu-item-mobile">
-                  <img
-                    src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-products-icon.png"
-                    alt="nav products"
-                    className="nav-bar-image"
-                  />
-                </li>
-              </Link>
               <Link to="/cart">
                 <li className="nav-menu-item-mobile">
                   <img
@@ -201,10 +207,10 @@ class Home extends Component {
           <div className="home-content">
             <SimpleSlider data={imagesList} />
           </div>
-          <div className="popular-rest">
-            <h1 className="heading-home1">Popular Restaurant</h1>
+          {/* <div className="popular-rest">
+            <h1 className="heading-home1">Popular Restaurants</h1>
             <p className="para-home1">
-              Select Your favorite restaurant special dish and make your day
+              Select Your favourite restaurant special dish and make your day
               happy...
             </p>
             <img
@@ -244,21 +250,23 @@ class Home extends Component {
                 ))}
               </ul>
             </div>
-            {/*             <Footer />
-             */}{' '}
-          </div>
+          </div> */}
+          <RestaurantList />
         </div>
       </>
     )
   }
 
   render() {
-    const jwtToken = Cookies.get('jwt_token')
-    if (jwtToken === undefined) {
-      return <Redirect to="/login" />
+    const {apiStatus} = this.state
+    switch (apiStatus) {
+      case apiStatusConstants.success:
+        return this.renderList()
+      case apiStatusConstants.inProgress:
+        return this.renderProductsLoader()
+      default:
+        return null
     }
-    const {isLoading} = this.state
-    return isLoading ? this.renderLoader() : this.renderList()
   }
 }
 

@@ -10,6 +10,7 @@ dependencies:
   mock-local-storage: 1.1.17
   msw: 0.34.0
   react: 17.0.1
+  react-core-loading-spinner: 1.0.2
   react-dom: 17.0.1_react@17.0.1
   react-icons: 4.3.1_react@17.0.1
   react-loader-spinner: 4.0.0_react-dom@17.0.1+react@17.0.1
@@ -11458,6 +11459,17 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-0sF4ny9v/B7s6aoehwze9vJNWcmCemAUYBVasscVr92+UYiEqDXOxfKjXN685mDaMRNF3WdhHQs76oTODMocFA==
+  /react-core-loading-spinner/1.0.2:
+    dependencies:
+      prop-types: 15.8.0
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
+    dev: false
+    engines:
+      node: '>=4.0.0'
+      npm: ~3.3.6
+    resolution:
+      integrity: sha512-Id7hrAqeONhpPkFLh2cDWoBdfzxnioXKschYzDiHzocerN8px/dY3ZlR4CAh2NHDVV3HAqIpfdpkaYKEADb+1g==
   /react-dev-utils/11.0.4:
     dependencies:
       '@babel/code-frame': 7.10.4
@@ -11489,6 +11501,18 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-dx0LvIGHcOPtKbeiSUM4jqpBl3TcY7CDjZdfOIcKeznE7BWr9dg0iPG90G5yfVQ+p/rGNMXdbfStvzQZEVEi4A==
+  /react-dom/16.14.0_react@16.14.0:
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      prop-types: 15.8.0
+      react: 16.14.0
+      scheduler: 0.19.1
+    dev: false
+    peerDependencies:
+      react: ^16.14.0
+    resolution:
+      integrity: sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw==
   /react-dom/17.0.1_react@17.0.1:
     dependencies:
       loose-envify: 1.4.0
@@ -12212,6 +12236,13 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-5LBh1Tls8c9xgGjw3QrMwETmTMVk0oFgvrFSvWx62llR2hcEInrKNZ2GZCCuuy2lvWrdl5jhbpeqc5hRYKFOcw==
+  /scheduler/0.19.1:
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+    dev: false
+    resolution:
+      integrity: sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA==
   /scheduler/0.20.2:
     dependencies:
       loose-envify: 1.4.0
@@ -14302,6 +14333,7 @@ specifiers:
   npm-run-all: 4.1.5
   prettier: 2.2.1
   react: 17.0.1
+  react-core-loading-spinner: 1.0.2
   react-dom: 17.0.1
   react-icons: 4.3.1
   react-loader-spinner: 4.0.0
