@@ -350,3 +350,13 @@
 .nav-bar-image {
   width: 24px;
 }
+
+.loader {
+  position: absolute;
+  color: #f7931e;
+  height: 53.33332824707031px;
+  width: 53.33332824707031px;
+  left: 693.33px;
+  top: 485.33px;
+  border-radius: 0px;
+}

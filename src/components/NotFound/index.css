@@ -1,0 +1,56 @@
+.not-found {
+  width: 1440px;
+}
+
+.notfound-img {
+  position: absolute;
+  height: 297px;
+  width: 269px;
+  left: 586px;
+  top: 235px;
+  border-radius: 0px;
+}
+
+.not-found-heading {
+  position: absolute;
+  height: 48px;
+  width: 241px;
+  left: 600px;
+  top: 580px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 48px;
+  color: #1e293b;
+}
+
+.not-found-para {
+  position: absolute;
+  height: 64px;
+  width: 530px;
+  left: 455px;
+  top: 644px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+
+  /* Light / blue-gray / 600 */
+
+  color: #475569;
+}
+
+.butt-not-found {
+  position: absolute;
+  height: 48px;
+  width: 123px;
+  left: 658.5px;
+  top: 740px;
+  border-radius: 4px;
+  background: #f7931e;
+  border-width: 0px;
+  cursor: pointer;
+}

@@ -27,6 +27,8 @@ class ResturantList extends Component {
   state = {
     productsList: [],
     activeOptionId: sortByOptions[1].value,
+    activePage: 1,
+    limit: 9,
   }
 
   componentDidMount() {
@@ -38,11 +40,10 @@ class ResturantList extends Component {
       apiStatus: apiStatusConstants.inProgress,
     })
     const jwtToken = Cookies.get('jwt_token')
-    const {activeOptionId} = this.state
-    const offset = ''
-    const LIMIT = ''
+    const {activeOptionId, activePage, limit} = this.state
+    const offset = activePage * limit
     const sorter = activeOptionId
-    const apiUrl = `https://apis.ccbp.in/restaurants-list?offset=${21}&limit=${9}&sort_by_rating=${sorter}`
+    const apiUrl = `https://apis.ccbp.in/restaurants-list?offset=${offset}&limit=${limit}&sort_by_rating=${sorter}`
     const options = {
       headers: {
         Authorization: `Bearer ${jwtToken}`,
@@ -82,7 +83,7 @@ class ResturantList extends Component {
 
   renderProductsLoader = () => (
     <div className="products-loader-container" testid="restaurants-list-loader">
-      <Loader type="TailSpin" color="#0b69ff" height="50" width="50" />
+      <Loader type="TailSpin" className="loader" />
     </div>
   )
 

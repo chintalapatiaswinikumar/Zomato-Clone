@@ -21,6 +21,7 @@ class LoginForm extends Component {
   }
 
   onSubmitSuccess = jwtToken => {
+    console.log(jwtToken)
     const {history} = this.props
 
     Cookies.set('jwt_token', jwtToken, {

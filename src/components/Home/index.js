@@ -8,18 +8,6 @@ import RestaurantList from '../RestaurantList'
 /* import Footer from '../Footer'
  */ import SimpleSlider from '../Carousel/index'
 
-const sortByOptions = [
-  {
-    id: 0,
-    displayText: 'Highest',
-    value: 'Highest',
-  },
-  {
-    id: 2,
-    displayText: 'Lowest',
-    value: 'Lowest',
-  },
-]
 const apiStatusConstants = {
   initial: 'INITIAL',
   success: 'SUCCESS',
@@ -130,12 +118,11 @@ class Home extends Component {
       className="products-loader-container"
       testid="restaurants-offers-loader"
     >
-      <Loader type="TailSpin" color="#0b69ff" height="50" width="50" />
+      <Loader type="TailSpin" className="loader" />
     </div>
   )
 
   renderList = () => {
-    const x = sortByOptions
     const {imagesList} = this.state
     return (
       <>
