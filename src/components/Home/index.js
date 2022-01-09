@@ -123,6 +123,7 @@ class Home extends Component {
   )
 
   renderList = () => {
+    console.log('in home')
     const {imagesList} = this.state
     return (
       <>
