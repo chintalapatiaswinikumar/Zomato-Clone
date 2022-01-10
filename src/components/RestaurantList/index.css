@@ -7,3 +7,57 @@
   top: 485.33px;
   border-radius: 0px;
 }
+
+.pagination-box {
+  position: absolute;
+  height: 32px;
+  width: 145px;
+  left: 647px;
+  top: 900px;
+  border-radius: 0px;
+}
+
+.home-butt-1 {
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+  border: 1px solid #334155;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 0px;
+}
+
+/* .span-rest {
+  position: absolute;
+  height: 27px;
+  width: 57px;
+  left: 30px;
+  border-radius: 0px;
+} */
+
+.spn-para {
+  position: absolute;
+  left: 50px;
+}
+
+.spn-box {
+  position: absolute;
+  height: 27px;
+  width: 57px;
+  left: 50px;
+  padding-top: 5px;
+  color: #334155;
+}
+
+.home-butt-2 {
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  left: 100px;
+  cursor: pointer;
+  border: 1px solid #334155;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 0px;
+}

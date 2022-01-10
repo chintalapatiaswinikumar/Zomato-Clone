@@ -1,0 +1,79 @@
+.footer {
+  position: absolute;
+  height: 424px;
+  width: 1440px;
+  border-radius: 0px;
+  top: 1000px;
+  background-color: #0f172a;
+}
+
+.footer-logo {
+  position: absolute;
+  top: 100px;
+  left: 573px;
+  height: 39px;
+  width: 49px;
+}
+
+.footer-head {
+  position: absolute;
+  color: #ffffff;
+  font-family: DM Sans;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 48px;
+  width: 229px;
+  height: 48px;
+  top: 65px;
+  left: 640px;
+}
+
+.footer-para {
+  position: absolute;
+  height: 64px;
+  width: 479px;
+  left: 480px;
+  top: 168px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 32px;
+  /* or 133% */
+
+  text-align: center;
+  color: #ffffff;
+}
+
+.footer-imgs {
+  position: absolute;
+  height: 48px;
+  width: 48px;
+  top: 284px;
+  left: 580px;
+}
+
+.footer-imgs-1 {
+  position: absolute;
+  height: 48px;
+  width: 48px;
+  top: 284px;
+  left: 660px;
+}
+
+.footer-imgs-2 {
+  position: absolute;
+  height: 48px;
+  width: 48px;
+  top: 284px;
+  left: 738px;
+}
+
+.footer-imgs-3 {
+  position: absolute;
+  height: 48px;
+  width: 48px;
+  top: 284px;
+  left: 820px;
+}

@@ -2,7 +2,9 @@ import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
 import './index.css'
+import {MdKeyboardArrowLeft, MdKeyboardArrowRight} from 'react-icons/md'
 import Restaurant from '../Restaurant'
+import Footer from '../Footer'
 
 const sortByOptions = [
   {
@@ -41,7 +43,7 @@ class ResturantList extends Component {
     })
     const jwtToken = Cookies.get('jwt_token')
     const {activeOptionId, activePage, limit} = this.state
-    const offset = activePage * limit
+    const offset = (activePage - 1) * limit
     const sorter = activeOptionId
     const apiUrl = `https://apis.ccbp.in/restaurants-list?offset=${offset}&limit=${limit}&sort_by_rating=${sorter}`
     const options = {
@@ -53,7 +55,9 @@ class ResturantList extends Component {
     const response = await fetch(apiUrl, options)
     if (response.ok) {
       const fetchedData = await response.json()
-      const updatedData = fetchedData.restaurants.map(restaurant => ({
+      console.log(fetchedData.restaurants.length)
+      /*       this.setState({})
+       */ const updatedData = fetchedData.restaurants.map(restaurant => ({
         costForTwo: restaurant.cost_for_two,
         cuisine: restaurant.cuisine,
         groupByTime: restaurant.group_by_time,
@@ -87,9 +91,25 @@ class ResturantList extends Component {
     </div>
   )
 
+  handleLeftClick = () => {
+    const {activePage} = this.state
+    if (activePage > 1) {
+      const x = activePage - 1
+      this.setState({activePage: x}, this.getProducts)
+    }
+  }
+
+  handleRightClick = () => {
+    const {activePage} = this.state
+    if (activePage < 4) {
+      const x = activePage + 1
+      this.setState({activePage: x}, this.getProducts)
+    }
+  }
+
   renderList = () => {
     const x = sortByOptions
-    const {activeOptionId, productsList} = this.state
+    const {activeOptionId, productsList, activePage} = this.state
     return (
       <>
         <div className="popular-rest">
@@ -129,8 +149,31 @@ class ResturantList extends Component {
               ))}
             </ul>
           </div>
-          {/*             <Footer />
-           */}{' '}
+          <div className="pagination-box">
+            <button
+              type="button"
+              testid="pagination-left-button"
+              className="home-butt-1"
+              onClick={this.handleLeftClick}
+            >
+              <MdKeyboardArrowLeft />
+            </button>
+            <div className="spn-box">
+              <span testid="active-page-number" className="span-rest">
+                {activePage}
+              </span>{' '}
+              of 4{' '}
+            </div>
+            <button
+              type="button"
+              testid="pagination-right-button"
+              className="home-butt-2"
+              onClick={this.handleRightClick}
+            >
+              <MdKeyboardArrowRight />
+            </button>
+          </div>
+          <Footer />
         </div>
       </>
     )

@@ -12,7 +12,9 @@ class Restaurant extends Component {
         <img src={imageUrl} alt="restaurant" className="rest-img" />
         <div className="box11">
           <h1 className="title">{name}</h1>
-          <p className="brand">{menuType}</p>
+          <p className="brand" testid="restaurant-item">
+            {menuType}
+          </p>
           <div className="rating-container">
             <img
               src="https://res.cloudinary.com/dx3zbikpn/image/upload/v1641100478/7_Ratingstar_ejbb0z.png"
